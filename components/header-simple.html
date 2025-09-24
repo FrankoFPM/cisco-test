@@ -1,5 +1,5 @@
 <!-- Header Component - DS3 Comunicaciones -->
-<header class="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 transition-colors duration-200">
+<header id="main-header" class="bg-white dark:bg-gray-900 shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform translate-y-0">
   <!-- Header Principal -->
   <div class="bg-blue-600 dark:bg-blue-800 text-white transition-colors duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -354,10 +354,61 @@ function setupMobileMenu() {
   }
 }
 
+// Función para manejar el scroll del header
+function setupScrollHeader() {
+  const header = document.getElementById('main-header');
+  if (!header) return;
+
+  let lastScrollTop = 0;
+  let isHeaderVisible = true;
+  const scrollThreshold = 10; // Mínimo scroll para activar
+  
+  function updateHeaderVisibility() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDelta = Math.abs(scrollTop - lastScrollTop);
+    
+    // Solo procesar si el scroll es significativo
+    if (scrollDelta < scrollThreshold) return;
+    
+    // Determinar dirección del scroll
+    const isScrollingDown = scrollTop > lastScrollTop;
+    const shouldHideHeader = isScrollingDown && scrollTop > 100; // Ocultar después de 100px
+    const shouldShowHeader = !isScrollingDown || scrollTop <= 50; // Mostrar al subir o cerca del top
+    
+    // Aplicar transformación solo si hay cambio
+    if (shouldHideHeader && isHeaderVisible) {
+      header.style.transform = 'translateY(-100%)';
+      isHeaderVisible = false;
+    } else if (shouldShowHeader && !isHeaderVisible) {
+      header.style.transform = 'translateY(0)';
+      isHeaderVisible = true;
+    }
+    
+    lastScrollTop = scrollTop;
+  }
+  
+  // Throttle para mejor performance
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateHeaderVisibility);
+      ticking = true;
+      setTimeout(() => { ticking = false; }, 10);
+    }
+  }
+  
+  // Event listener para scroll
+  window.addEventListener('scroll', requestTick, { passive: true });
+  
+  // Asegurar que el header sea visible al cargar
+  header.style.transform = 'translateY(0)';
+}
+
 // Ejecutar cuando el contenido se carga
 document.addEventListener('DOMContentLoaded', function() {
   setupDarkMode();
   setupMobileMenu();
+  setupScrollHeader();
 });
 
 // Si ya está cargado, ejecutar inmediatamente
@@ -367,5 +418,6 @@ if (document.readyState === 'loading') {
   // El documento ya se cargó
   setupDarkMode();
   setupMobileMenu();
+  setupScrollHeader();
 }
 </script>
