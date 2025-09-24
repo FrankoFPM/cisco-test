@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Variables CSS Globales */
+:root {
+  /* Colors principales */
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1e40af;
+  --primary-blue-light: #3b82f6;
+  --primary-gray: #6b7280;
+  --primary-gray-light: #9ca3af;
+  --primary-gray-dark: #374151;
+  
+  /* Header variables */
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+  --header-text: #1f2937;
+  
+  /* Footer variables */
+  --footer-bg: #f8fafc;
+  --footer-text: #4a5568;
+  --footer-heading: #2d3748;
+  --footer-link-hover: #3182ce;
+  
+  /* Breadcrumb variables */
+  --breadcrumb-bg: #ffffff;
+  --breadcrumb-border: #e5e7eb;
+  --breadcrumb-text: #6b7280;
+  --breadcrumb-text-hover: #2563eb;
+  --breadcrumb-current: #1e40af;
+  --breadcrumb-separator: #d1d5db;
+}
+
+/* Scroll personalizado */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Utilidades adicionales */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --header-bg: #1f2937;
+    --header-border: #374151;
+    --header-text: #f9fafb;
+    
+    --footer-bg: #1f2937;
+    --footer-text: #9ca3af;
+    --footer-heading: #f9fafb;
+    
+    --breadcrumb-bg: #1f2937;
+    --breadcrumb-border: #374151;
+    --breadcrumb-text: #9ca3af;
+    --breadcrumb-text-hover: #60a5fa;
+    --breadcrumb-current: #3b82f6;
+    --breadcrumb-separator: #6b7280;
+  }
+}
+
+/* Asegurar que las clases dark: funcionen */
+.dark {
+  color-scheme: dark;
+}

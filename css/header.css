@@ -1,0 +1,17 @@
+/* Animación sutil para el menú móvil */
+.mobile-menu:not(.hidden) {
+  max-height: 400px;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Efecto hover especial para separadores de nav principal */
+nav a:hover + span::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}

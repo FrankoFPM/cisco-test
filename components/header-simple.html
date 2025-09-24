@@ -1,0 +1,371 @@
+<!-- Header Component - DS3 Comunicaciones -->
+<header class="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 transition-colors duration-200">
+  <!-- Header Principal -->
+  <div class="bg-blue-600 dark:bg-blue-800 text-white transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo y Nombre de la Empresa -->
+        <div class="flex items-center space-x-3 hover:scale-105 transition-transform duration-200">
+          <img src="./img/Logo.webp" alt="DS3 Comunicaciones" class="h-10 px-2 bg-white rounded-lg object-cover">
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold">DS3 Comunicaciones</h1>
+            <p class="text-blue-100 dark:text-blue-200 text-xs transition-colors duration-200">Soluciones en Redes y Comunicaciones</p>
+          </div>
+        </div>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="https://www.ds3comunicaciones.com/index.html" 
+             class="hover:text-blue-200 dark:hover:text-blue-300 transition-colors duration-200 flex items-center space-x-2 font-medium relative group">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-200 dark:bg-blue-300 transition-all duration-300 group-hover:w-full"></div>
+          </a>
+          <div class="relative group">
+            <button class="hover:text-blue-200 dark:hover:text-blue-300 transition-colors duration-200 flex items-center space-x-1 font-medium relative">
+              <span>Productos</span>
+              <i class="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+            </button>
+          </div>
+          <a href="#" class="hover:text-blue-200 dark:hover:text-blue-300 transition-colors duration-200 font-medium relative group">
+            Servicios
+            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-200 dark:bg-blue-300 transition-all duration-300 group-hover:w-full"></div>
+          </a>
+          <a href="#" class="hover:text-blue-200 dark:hover:text-blue-300 transition-colors duration-200 font-medium relative group">
+            Contacto
+            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-200 dark:bg-blue-300 transition-all duration-300 group-hover:w-full"></div>
+          </a>
+
+          <!-- Dark Mode Toggle -->
+          <button id="dark-mode-toggle" 
+                  class="p-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-400"
+                  aria-label="Cambiar modo oscuro"
+                  title="Cambiar tema">
+            <i id="dark-mode-icon" class="fas fa-moon text-lg"></i>
+          </button>
+        </nav>
+
+        <!-- Controles Móvil -->
+        <div class="md:hidden flex items-center space-x-2">
+          <!-- Dark Mode Toggle Móvil -->
+          <button id="dark-mode-toggle-mobile" 
+                  class="p-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-400"
+                  aria-label="Cambiar modo oscuro"
+                  title="Cambiar tema">
+            <i id="dark-mode-icon-mobile" class="fas fa-moon"></i>
+          </button>
+          
+          <!-- Botón Menú Móvil -->
+          <button id="mobile-menu-toggle" 
+                  class="p-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-400 hover:scale-110"
+                  aria-label="Abrir menú">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú Móvil -->
+  <div id="mobile-menu" class="md:hidden bg-blue-600 dark:bg-blue-800 text-white hidden transition-colors duration-200">
+    <div class="px-4 py-2 space-y-1">
+      <a href="https://www.ds3comunicaciones.com/index.html" 
+         class="block px-3 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 hover:translate-x-1">
+        <i class="fas fa-home mr-2"></i>Inicio
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 hover:translate-x-1">
+        <i class="fas fa-box mr-2"></i>Productos
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 hover:translate-x-1">
+        <i class="fas fa-cogs mr-2"></i>Servicios
+      </a>
+      <a href="#" class="block px-3 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-200 hover:translate-x-1">
+        <i class="fas fa-envelope mr-2"></i>Contacto
+      </a>
+    </div>
+  </div>
+
+  <!-- Navegación de Productos (Submenu) -->
+  <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- Indicador de deslizamiento en móvil -->
+      <div class="flex items-center justify-between py-2 md:hidden">
+        <span class="text-xs text-gray-500 dark:text-gray-400">Productos</span>
+        <span class="text-xs text-gray-400 dark:text-gray-500 flex items-center">
+          <i class="fas fa-arrow-left mr-1"></i>
+          Desliza
+          <i class="fas fa-arrow-right ml-1"></i>
+        </span>
+      </div>
+      
+      <!-- Grid responsive para productos -->
+      <div class="hidden md:grid md:grid-cols-4 lg:grid-cols-7 gap-3 py-4">
+        
+        <!-- Switch Catalyst -->
+        <a href="https://www.ds3comunicaciones.com/cisco/catalys_9200l.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <img src="./icons/Switch Catalyst.ico" 
+                 class="max-h-full max-w-full group-hover:scale-110 transition-transform duration-200" 
+                 alt="Switch Catalyst" 
+                 loading="lazy" />
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Switch Catalyst
+          </span>
+        </a>
+
+        <!-- Cisco Business -->
+        <a href="https://www.ds3comunicaciones.com/cisco/bussines_sg350.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <img src="./icons/Cisco Business.ico" 
+                 class="max-h-full max-w-full group-hover:scale-110 transition-transform duration-200" 
+                 alt="Cisco Business"
+                 loading="lazy" />
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Cisco Business
+          </span>
+        </a>
+
+        <!-- Switch Industrial -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_switch_industrial_b.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <img src="./icons/Switch Industrial.ico" 
+                 class="max-h-full max-w-full group-hover:scale-110 transition-transform duration-200" 
+                 alt="Switch Industrial"
+                 loading="lazy" />
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Switch Industrial
+          </span>
+        </a>
+
+        <!-- Aironet -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_access_point_b.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+              <i class="fas fa-wifi text-blue-600 dark:text-blue-400 text-sm"></i>
+            </div>
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Aironet
+          </span>
+        </a>
+
+        <!-- Teléfono -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_telefonos_b.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <div class="w-8 h-8 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+              <i class="fas fa-phone text-green-600 dark:text-green-400 text-sm"></i>
+            </div>
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Teléfono
+          </span>
+        </a>
+
+        <!-- Meraki -->
+        <a href="https://ds3comunicaciones.com/cisco/precios_cisco_meraki_b.html"
+           class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <div class="w-8 h-8 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+              <i class="fas fa-cloud text-orange-600 dark:text-orange-400 text-sm"></i>
+            </div>
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Meraki
+          </span>
+        </a>
+
+        <!-- Transceiver -->
+        <a href="#" class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 group border border-transparent hover:border-blue-200 dark:hover:border-blue-400 hover:-translate-y-1 hover:shadow-md">
+          <div class="h-10 w-10 flex items-center justify-center mb-2">
+            <div class="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+              <i class="fas fa-plug text-purple-600 dark:text-purple-400 text-sm"></i>
+            </div>
+          </div>
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-200 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+            Transceiver
+          </span>
+        </a>
+      </div>
+
+      <!-- Scroll horizontal para móvil -->
+      <div class="flex md:hidden overflow-x-auto py-3 space-x-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+        
+        <!-- Switch Catalyst -->
+        <a href="https://www.ds3comunicaciones.com/cisco/catalys_9200l.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <img src="./icons/Switch Catalyst.ico" 
+                 class="max-h-full max-w-full" 
+                 alt="Switch Catalyst" 
+                 loading="lazy" />
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Switch Catalyst
+          </span>
+        </a>
+
+        <!-- Cisco Business -->
+        <a href="https://www.ds3comunicaciones.com/cisco/bussines_sg350.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <img src="./icons/Cisco Business.ico" 
+                 class="max-h-full max-w-full" 
+                 alt="Cisco Business"
+                 loading="lazy" />
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Cisco Business
+          </span>
+        </a>
+
+        <!-- Switch Industrial -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_switch_industrial_b.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <img src="./icons/Switch Industrial.ico" 
+                 class="max-h-full max-w-full" 
+                 alt="Switch Industrial"
+                 loading="lazy" />
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Switch Industrial
+          </span>
+        </a>
+
+        <!-- Aironet -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_access_point_b.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <div class="w-6 h-6 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-wifi text-blue-600 dark:text-blue-400 text-xs"></i>
+            </div>
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Aironet
+          </span>
+        </a>
+
+        <!-- Teléfono -->
+        <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_telefonos_b.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <div class="w-6 h-6 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-phone text-green-600 dark:text-green-400 text-xs"></i>
+            </div>
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Teléfono
+          </span>
+        </a>
+
+        <!-- Meraki -->
+        <a href="https://ds3comunicaciones.com/cisco/precios_cisco_meraki_b.html"
+           class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <div class="w-6 h-6 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-cloud text-orange-600 dark:text-orange-400 text-xs"></i>
+            </div>
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Meraki
+          </span>
+        </a>
+
+        <!-- Transceiver -->
+        <a href="#" class="flex items-center p-3 rounded-lg min-w-fit flex-shrink-0 space-x-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-200 group active:scale-95">
+          <div class="h-8 w-8 flex items-center justify-center">
+            <div class="w-6 h-6 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center">
+              <i class="fas fa-plug text-purple-600 dark:text-purple-400 text-xs"></i>
+            </div>
+          </div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+            Transceiver
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Script para Dark Mode y menú móvil -->
+<script>
+// Función para inicializar el dark mode
+function setupDarkMode() {
+  // Detectar preferencia del sistema
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('darkMode');
+  
+  // Aplicar tema inicial
+  let isDarkMode = savedTheme === 'true' || (!savedTheme && prefersDark);
+  if (isDarkMode) {
+    document.documentElement.classList.add('dark');
+  }
+  
+  // Actualizar iconos
+  function updateDarkModeIcons(dark) {
+    const iconClass = dark ? 'fa-sun' : 'fa-moon';
+    const desktopIcon = document.getElementById('dark-mode-icon');
+    const mobileIcon = document.getElementById('dark-mode-icon-mobile');
+    
+    if (desktopIcon) desktopIcon.className = `fas ${iconClass} text-lg`;
+    if (mobileIcon) mobileIcon.className = `fas ${iconClass}`;
+  }
+  
+  // Función de toggle
+  function toggleDarkMode() {
+    const html = document.documentElement;
+    const isNowDark = html.classList.toggle('dark');
+    localStorage.setItem('darkMode', isNowDark.toString());
+    updateDarkModeIcons(isNowDark);
+  }
+  
+  // Configurar iconos iniciales
+  updateDarkModeIcons(isDarkMode);
+  
+  // Agregar event listeners
+  const desktopToggle = document.getElementById('dark-mode-toggle');
+  const mobileToggle = document.getElementById('dark-mode-toggle-mobile');
+  
+  if (desktopToggle) {
+    desktopToggle.addEventListener('click', toggleDarkMode);
+  }
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', toggleDarkMode);
+  }
+}
+
+// Función para el menú móvil
+function setupMobileMenu() {
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (toggle && menu) {
+    toggle.addEventListener('click', function() {
+      menu.classList.toggle('hidden');
+    });
+  }
+}
+
+// Ejecutar cuando el contenido se carga
+document.addEventListener('DOMContentLoaded', function() {
+  setupDarkMode();
+  setupMobileMenu();
+});
+
+// Si ya está cargado, ejecutar inmediatamente
+if (document.readyState === 'loading') {
+  // El documento aún se está cargando
+} else {
+  // El documento ya se cargó
+  setupDarkMode();
+  setupMobileMenu();
+}
+</script>

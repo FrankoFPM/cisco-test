@@ -1,0 +1,25 @@
+/* Lista de breadcrumbs - reset básico */
+nav[aria-label="Breadcrumb"] ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Animación animate-pulse */
+nav[aria-label="Breadcrumb"] .animate-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* Efectos hover adicionales para separadores */
+nav[aria-label="Breadcrumb"] li:hover + li .fa-chevron-right {
+  transform: translateX(2px);
+}
